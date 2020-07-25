@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xml>
+	<ModInfo>
+		<Name value="fpsHUD" />
+		<Description value="A 7DTD Hud modlet that modifies the game HUD - server-side friendly." />
+		<Author value="lloan alas" />
+		<Version value="19" />
+		<Website value="https://github.com/lloan/7DTD-fpsHUD" />
+	</ModInfo>
+</xml>

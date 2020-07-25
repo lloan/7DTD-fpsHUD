@@ -1,0 +1,9 @@
+<configs>
+    <!--alignment component-->
+    <append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
+        <window name="alignments" anchor="LeftTop"/>
+    </append>
+
+    <!--compass component-->
+    <setattribute xpath="/xui/ruleset[@name='default']/window_group[@name='compass']/window[@name='windowCompass']" name="anchor">CenterTop</setattribute>
+</configs>

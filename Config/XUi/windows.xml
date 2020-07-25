@@ -1,0 +1,38 @@
+<configs>
+
+    <!--alignment component-->
+    <append xpath="/windows">
+        <window name="alignments" size="50000, 50000" depth="99" pos="0,0">
+
+            <!--vertical left-->
+            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="1,50000" pos="20,0" depth="99" name="alignment1"/>
+            <!--vertical left-->
+            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="30,0" depth="99" name="alignment1"/>
+            <!--vertical left-->
+            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="50,0" depth="99" name="alignment1"/>
+
+            <!--horizontal top-->
+            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-20" depth="99" name="alignment2"/>
+            <!--horizontal top-->
+            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-30" depth="99" name="alignment2"/>
+            <!--horizontal top-->
+            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-50" depth="99" name="alignment2"/>
+
+            <!--vertical right-->
+            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="1,50000" pos="1825,0" depth="99" name="alignment4"/>
+            <!--vertical right-->
+            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="1815,0" depth="99" name="alignment4"/>
+            <!--vertical right-->
+            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="1795,0" depth="99" name="alignment4"/>
+
+            <!--horizontal bottom-->
+            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-1020" depth="99" name="alignment5"/>
+            <!--horizontal bottom-->
+            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-1010" depth="99" name="alignment5"/>
+            <!--horizontal bottom-->
+            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-990" depth="99" name="alignment5"/>
+
+        </window>
+    </append>
+
+</configs>
