@@ -123,11 +123,14 @@
     <remove xpath="/windows/window[@name='windowCompass']"/>
 
     <append xpath="/windows">
-        <window name="windowCompass" pos="-190,-20" size="380,43" controller="CompassWindow">
-            <sprite depth="2" name="background" color="0,0,0,180" pos="-45,40" size="485, 100" globalopacitymod="0.5" type="sliced" />
-            <texture name="survivorHUDcompassMarker" depth="9" pos="170,15" size="42,58"
-                     texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/uiAtlas/survivorHUD_hud_compass_marker.png"
+        <window name="windowCompass" pos="-190,-25" size="380,43" controller="CompassWindow">
+            <!--background for custom compass-->
+            <sprite depth="2" name="background" color="0,0,0,180" pos="-37,40" size="455, 80" globalopacitymod="0.5" type="sliced" />
+            <!--marker for custom compass-->
+            <texture name="survivorHUDcompassMarker" depth="9" pos="170,15" size="42,64"
+                     texture="@https://raw.githubusercontent.com/lloan/7DTD-fpsHUD/master/Textures/ui_hud_compass_marker.png"
                      color="[darkGrey]"/>
+            <!--custom compass texture-->
             <texture name="compassTexture" depth="8" pos="0,5" size="380,30" texture="@https://raw.githubusercontent.com/lloan/7DTD-fpsHUD/master/Textures/ui_game_compass.png"
                      color="[iconColor]" tooltip="CHARACTER" rect_size="0.25,1" rect_offset=".8,0"/>
         </window>
@@ -144,9 +147,7 @@
 
                 <rect name="survivorHUDstealthBar" pos="60,70" size="240,55" controller="HUDStatBar" stat_type="Stealth"
                       visible="{statvisible}">
-                    <texture name="survivorHUDstatsIconBG" depth="6" pos="-10,-10" size="40,50"
-                             texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/uiAtlas/survivorHUD_hud_icon_background_radial.png"
-                             color="[hudElementsBG]" pivot="center" globalopacitymod="1.8" rotation="90"/>
+
                     <texture name="mainBackground" depth="3" pos="-10,-1" size="155,18"
                              texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/uiAtlas/survivorHUD_stats_background_v2.png"
                              type="filled" fill="1" globalopacitymod="1.5" color="[hudElementsBG]" flip="vertically"/>
@@ -164,9 +165,7 @@
 
                 <rect name="survivorHUDhealthBar" pos="0,32" size="240,55" controller="HUDStatBar" stat_type="Health"
                       visible="{statvisible}">
-                    <texture name="survivorHUDstatsBG" depth="1" pos="10,15" size="225,170"
-                             texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/uiAtlas/survivorHUD_stats_background_v2.png"
-                             type="sliced" globalopacitymod="1.5" color="[hudElementsBG]"/>
+
                     <sprite name="background" depth="2" pos="66,-10" size="140,24" atlas="uiAtlas" type="sliced"
                             globalopacitymod="0.6" color="[hudElementsBG]"/>
                     <filledsprite name="background" depth="3" pos="66,-10" size="140,24" atlas="uiAtlas" type="filled"
