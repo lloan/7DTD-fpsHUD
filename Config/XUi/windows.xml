@@ -1,38 +1,38 @@
 <configs>
 
-    <append xpath="/windows">
-        <window name="alignments" size="50000, 50000" depth="99" pos="0,0">
+<!--    <append xpath="/windows">-->
+<!--        <window name="alignments" size="50000, 50000" depth="99" pos="0,0">-->
 
-            <!--vertical left-->
-            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="1,50000" pos="20,0" depth="99" name="alignment1"/>
-            <!--vertical left-->
-            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="30,0" depth="99" name="alignment1"/>
-            <!--vertical left-->
-            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="50,0" depth="99" name="alignment1"/>
+<!--            &lt;!&ndash;vertical left&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="1,50000" pos="20,0" depth="99" name="alignment1"/>-->
+<!--            &lt;!&ndash;vertical left&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="30,0" depth="99" name="alignment1"/>-->
+<!--            &lt;!&ndash;vertical left&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="50,0" depth="99" name="alignment1"/>-->
 
-            <!--horizontal top-->
-            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-20" depth="99" name="alignment2"/>
-            <!--horizontal top-->
-            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-30" depth="99" name="alignment2"/>
-            <!--horizontal top-->
-            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-50" depth="99" name="alignment2"/>
+<!--            &lt;!&ndash;horizontal top&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-20" depth="99" name="alignment2"/>-->
+<!--            &lt;!&ndash;horizontal top&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-30" depth="99" name="alignment2"/>-->
+<!--            &lt;!&ndash;horizontal top&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-50" depth="99" name="alignment2"/>-->
 
-            <!--vertical right-->
-            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="1,50000" pos="1825,0" depth="99" name="alignment4"/>
-            <!--vertical right-->
-            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="1815,0" depth="99" name="alignment4"/>
-            <!--vertical right-->
-            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="1795,0" depth="99" name="alignment4"/>
+<!--            &lt;!&ndash;vertical right&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="1,50000" pos="1825,0" depth="99" name="alignment4"/>-->
+<!--            &lt;!&ndash;vertical right&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="1815,0" depth="99" name="alignment4"/>-->
+<!--            &lt;!&ndash;vertical right&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="1,50000" pos="1795,0" depth="99" name="alignment4"/>-->
 
-            <!--horizontal bottom-->
-            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-1020" depth="99" name="alignment5"/>
-            <!--horizontal bottom-->
-            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-1010" depth="99" name="alignment5"/>
-            <!--horizontal bottom-->
-            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-990" depth="99" name="alignment5"/>
+<!--            &lt;!&ndash;horizontal bottom&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[red]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-1020" depth="99" name="alignment5"/>-->
+<!--            &lt;!&ndash;horizontal bottom&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-1010" depth="99" name="alignment5"/>-->
+<!--            &lt;!&ndash;horizontal bottom&ndash;&gt;-->
+<!--            <sprite pivot="center" color="[white]" sprite="menu_empty" fill="1" size="50000,1" pos="0,-990" depth="99" name="alignment5"/>-->
 
-        </window>
-    </append>
+<!--        </window>-->
+<!--    </append>-->
 
 
     <append xpath="/windows">
@@ -124,13 +124,11 @@
 
     <append xpath="/windows">
         <window name="windowCompass" pos="-190,-20" size="380,43" controller="CompassWindow">
-            <texture name="survivorHUDcompassBG" depth="0" pos="-121,40" size="622,140"
-                     texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/uiAtlas/survivorHUD_hud_compass_background.png"
-                     color="0,0,0,0.20" globalopacitymod="0.5"/>
+            <sprite depth="2" name="background" color="0,0,0,180" pos="-45,40" size="485, 100" globalopacitymod="0.5" type="sliced" />
             <texture name="survivorHUDcompassMarker" depth="9" pos="170,15" size="42,58"
                      texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/uiAtlas/survivorHUD_hud_compass_marker.png"
                      color="[darkGrey]"/>
-            <texture name="compassTexture" depth="8" pos="0,5" size="380,20" texture="Textures/UI/ui_game_compass"
+            <texture name="compassTexture" depth="8" pos="0,5" size="380,30" texture="@https://raw.githubusercontent.com/lloan/7DTD-fpsHUD/master/Textures/ui_game_compass.png"
                      color="[iconColor]" tooltip="CHARACTER" rect_size="0.25,1" rect_offset=".8,0"/>
         </window>
     </append>
