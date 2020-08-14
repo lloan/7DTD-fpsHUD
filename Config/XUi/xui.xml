@@ -1,9 +1,46 @@
 <configs>
+
+    <!--   Compass -->
     <!--alignment component-->
     <append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
         <window name="alignments" anchor="LeftTop"/>
     </append>
 
-    <!--compass component-->
-    <setattribute xpath="/xui/ruleset[@name='default']/window_group[@name='compass']/window[@name='windowCompass']" name="anchor">CenterTop</setattribute>
+    <!--alignment component-->
+    <append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
+        <window name="playerInfo" anchor="CenterTop"/>
+    </append>
+
+    <setattribute xpath="/xui/ruleset[@name='default']/window_group[@name='compass']/window[@name='windowCompass']"
+                  name="anchor">CenterTop
+    </setattribute>
+
+
+    <!--   Level Display & XP Bar -->
+
+    <append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
+        <window name="survivorHUDlevelXP" anchor="LeftTop"/>
+    </append>
+
+
+    <!--   Day & Time Display HUD -->
+
+    <append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
+        <window name="survivorHUDdayTimeFrame" anchor="LeftTop"/>
+    </append>
+
+
+    <!--   Time Display UI -->
+
+    <append xpath="/xui/ruleset[@name='default']/window_group[@name='map']">
+        <window name="survivorHUDtimeFrame" anchor="LeftTop"/>
+    </append>
+
+
+    <!--   Temperature & Elevation Display -->
+
+    <append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
+        <window name="survivorHUDenvironment" anchor="LeftTop"/>
+    </append>
+
 </configs>

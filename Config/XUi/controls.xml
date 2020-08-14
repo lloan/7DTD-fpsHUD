@@ -1,0 +1,32 @@
+<configs>
+
+		<!--  Toolbelt Interface -->
+
+		<append xpath="/controls">
+			<survivorHUD_toolbelt_interface>
+				<rect style="hover, survivorHUD_toolbelt_interface" controller="ItemStack" collider_scale="1.1">
+					<texture name="backgroundMain" depth="-1" pos="16,10" size="45,55" texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/uiAtlas/survivorHUD_hud_slot_background.png" color="black" type="sliced" globalopacitymod="0.9" foregroundlayer="false" />
+
+					<sprite name="background" depth="2" pos="0,15" size="83,60" atlas="uiAtlas" type="sliced" fillcenter="false" globalopacity="true" />
+					<sprite name="highlightOverlay" depth="3" pos="0,0" size="82,82" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" />
+
+					<sprite name="itemIcon" depth="4" pos="40,-14" size="40,40" atlas="ItemIconAtlas" sprite="{itemicon}" color="{iconcolor}" foregroundlayer="true" pivot="center" />
+					<sprite name="lockTypeIcon" depth="8" pos="4,7" size="15,15" sprite="" foregroundlayer="true" />
+					<sprite name="itemtypeicon" depth="8" pos="4,7" size="15,15" sprite="ui_game_symbol_{itemtypeicon}" color="red" foregroundlayer="true" visible="{hasitemtypeicon}" />
+
+					<sprite name="durabilityBackground" depth="3" pos="5,-42" size="73,3" atlas="uiAtlas" color="[hudElementsBG]" type="sliced" foregroundlayer="true" />
+					<sprite name="durability" depth="4" pos="5,-42" size="73,3" atlas="uiAtlas"  color="[transparent]" type="filled" foregroundlayer="true" />
+
+					<sprite name="disabledOverlay" depth="5" pos="1,-1" size="82,82" color="[darkGrey_half_alpha]" type="sliced" visible="false" />
+
+					<label name="stackValue" depth="7" pos="0,-14" size="73,28" text="{itemcount}" font_size="20" color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="center" />
+					<label name="timer" depth="7" pos="35,-38" size="70,24" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" color="[beige]" justify="center" pivot="center" />
+					<texture name="cancel" depth="9" size="40,28" texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/ItemIconAtlas/survivorHUD_hud_general_cancel_icon.png" color="[hudElementsIcon]" type="sliced" foregroundlayer="true" visible="false"  />
+					<label name="itemName" depth="12" pos="36,-35" size="0,0" text="" font_size="22" color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" overflow="resizefreely" justify="center" pivot="center" above_soft_cursor="true" />
+
+					<sprite name="assembleIcon" depth="13" pos="19,-19" size="40,40" sprite="{stacklockicon}" visible="{isassemblelocked}" foregroundlayer="true" />
+				</rect>
+			</survivorHUD_toolbelt_interface>
+		</append>
+
+</configs>
