@@ -4,6 +4,9 @@ A 7DTD Hud modlet that modifies the game HUD - server-side friendly.
 In-game screenshot of the modlet in action.
 ![Screenshot](https://raw.githubusercontent.com/lloan/7DTD-fpsHUD/master/screenshot.jpg)
 
+Breakdown of features
+![Screenshot](https://raw.githubusercontent.com/lloan/7DTD-fpsHUD/master/screenshot-info.jpg)
+
 ## Features
 
 - Party System that shows the stamina of all members.
@@ -15,5 +18,5 @@ In-game screenshot of the modlet in action.
 - Simplified Chat Box with darker background.
 - Server-side friendly - does not require players to download & install this mod on their end.
 
-# How to Install
-Simple installation. Download this repository (Master Branch) and move into your Mods folder. That's it. 
+## Install
+Download this repository (Master Branch) and move into your Mods folder. That's it. 
