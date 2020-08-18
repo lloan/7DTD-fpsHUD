@@ -3,7 +3,7 @@
 		<author>lloan alas</author>
 		<name>fpsHUD</name>
 		<description>A 7DTD Hud modlet that modifies the game HUD - server-side friendly.</description>
-		<mod_version>0.0.1</mod_version>
+		<mod_version>1.0.0</mod_version>
 		<game_version>19</game_version>
 		<launcher_version>0.0.0</launcher_version>
 	</info>

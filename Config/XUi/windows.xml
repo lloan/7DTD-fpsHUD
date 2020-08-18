@@ -34,123 +34,59 @@
 <!--        </window>-->
 <!--    </append>-->
 
-
-    <append xpath="/windows">
-        <window name="playerInfo" size="700,100" depth="99" pos="300,-25">
-            <sprite depth="2" pos="20,0" height="20" width="150" type="sliced" foregroundlayer="true" color="red"/>
-            <sprite depth="3" pos="20,0" height="20" width="150" color="[darkGrey]" foregroundlayer="true" type="sliced"/>
-            <sprite depth="4" pos="20,0" height="20" width="150" color="{xpcolor}" sprite="menu_empty3px" type="filled" fill="{xp}" globalopacitymod="1.5"
-                    controller="ToolbeltWindow" standard_xp_color="85,125,180,200" updating_xp_color="[green]"
-                    deficit_xp_color="[red]" xp_fill_speed="3.5"/>
-
-
-            <rect controller="CharacterFrameWindow">
-
-                <panel name="header" height="15" depth="1" pos="9999,9999" backgroundspritename="ui_game_panel_header">
-                    <label depth="2" name="characterName" pos="42,-6" width="150" height="32" text="" font_size="32"/>
-                    <label depth="2" name="levelNumber" pos="240,-10" width="80" height="28" text="" color="[lightGrey]"/>
-                </panel>
-                <rect visible="{showcharacter}" pos="9999,9999" >
-                    <panel name="previewFrame" depth="0" pos="0,0" width="10" on_press="true" on_hover="true" disableautobackground="true" snap="false">
-                        <rect>
-                            <texture depth="2" name="playerPreview" material="Materials/Transparent Colored" size="8,8" globalopacity="false"/>
-                        </rect>
-                    </panel>
-                </rect>
-
-                <label depth="5" name="TextContent" pos="0,0" font_size="17" color="[white]" justify="center" pivot="topleft" text="Level: {playerlevel}                   XP^ {playerxptonextlevel}" controller="PlayerStatsWindow"/>
-
-            </rect>
-
-        </window>
-    </append>
-
-    <append xpath="/windows">
-        <window name="mapNavi" width="300" height="300" pos="0,0" panel="Center" controller="MapArea" cursor_area="true" >
-            <!--#$-IGS END.-$#-->
-            <panel name="header" pos="3,0" height="43" depth="1" backgroundspritename="ui_game_panel_header">
-                <sprite depth="1" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_map"/>
-                <label style="header.name" text="MAP" text_key="xuiMap" />
-                <button depth="1" name="switchStaticMap" style="icon32px, press, hover" pivot="center" pos="690, -21" sprite="ui_game_symbol_electric_switch" tooltip_key="lblSwitchStaticMap" sound="[paging_click]" />
-                <combobox name="cbxStaticMapType" type="ComboBoxEnum`1[XUiC_MapArea+EStaticMapOverlay]" value_wrap="true" localization_prefix="xuiStaticMapType" pos="460,-6" width="210" height="30" />
-            </panel>
-
-            <panel name="content" depth="0" pos="0,-43" height="770"  > <!-- backgroundcolor="[mediumGrey]" bordercolor="[black]" borderthickness="3" -->
-                nm<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="3,-3" width="718" height="761" color="[black]" type="sliced" fillcenter="false" />
-                <rect depth="1" name="toolbar" width="712" height="43" pos="6,-6">
-                    <sprite color="[lightGrey]" type="sliced" />
-                    <sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="718" height="47" color="[black]" type="sliced" fillcenter="false" />
-                    <button depth="1" name="playerIcon" style="icon32px, press, hover" pivot="center" pos="20,-21" sprite="ui_game_symbol_map_player_arrow" tooltip="Center on Player" tooltip_key="lblCenterOnPlayer" sound="[paging_click]" />
-                    <label depth="1" name="playerPos" pos="40,-12" width="150" height="28" text="110 S 769 W" font_size="26"/>
-
-                    <button depth="1" name="bedrollIcon" style="icon32px, press, hover" pivot="center" pos="216,-21" sprite="ui_game_symbol_map_bed" tooltip="Center on Sleeping Bag" tooltip_key="lblCenterOnSleepingBag" sound="[paging_click]" />
-                    <label depth="1" name="bedrollPos" pos="236,-12" width="150" height="28" text="300 N 832 W" font_size="26"/>
-
-                    <sprite depth="1" name="cursorIcon" style="icon32px, press, hover" pos="390,-5" sprite="ui_game_symbol_map_cursor" tooltip="Cursor Position" tooltip_key="lblCursorPosition" sound="[paging_click]"/>
-                    <label depth="1" name="cursorPos" pos="428,-12" width="130" height="28" text="300 N 832 W" font_size="26"/>
-
-                    <button depth="1" name="waypointIcon" style="icon32px, hover" pivot="center" on_press="true" pos="578,-21" sprite="ui_game_symbol_map_waypoint_remove" tooltip="Remove Quick Waypoint" tooltip_key="lblRemoveQuickWaypoint" />
-                    <label depth="1" name="waypointDistance" pos="586,-12" width="122" height="28" text="0.2 KILOMETERS" font_size="26"/>
-                </rect>
-                <!--#$-IGS BEGIN: Disabling snap for the map area. -$#-->
-                <panel name="mapView" depth="1" width="712" height="712" pos="6,-49" disableautobackground="true" on_drag="true" style="press, scroll, hover" sound="[craft_click]" snap="false"> <!-- backgroundcolor="[darkGrey]" bordercolor="[black]" borderthickness="0" -->
-                    <!--*#$-IGS END.-$#-->
-                    <sprite depth="1" name="backgroundMain" sprite="menu_empty" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
-                    <texture depth="2" name="mapViewTexture" width="712" height="712" pos="0,0" material="Materials/MaskableMainmap"/>
-                    <panel name="clippingPanel" depth="4" width="712" height="712" pos="0,0" disableautobackground="true" createuipanel="true" clipping="SoftClip" clippingsoftness="4,4" clippingsize="712,712" clippingcenter="356,-356" />
-
-                    <rect name="content" depth="5" pos="0,-565" height="239" controller="MapStats">
-
-                        <sprite depth="2" name="dayTimeIcon" width="24" height="24" pos="10,-16" sprite="ui_game_symbol_clock" color="[iconColor]" foregroundlayer="true"/>
-                        <label depth="2" name="dayTimeLabel" pos="40,-18" width="250" height="28" text="{mapdaytimetitle}: [DECEA3]{mapdaytime}[-]" font_size="26"/>
-
-                        <sprite depth="2" name="tempIcon" width="24" height="24" pos="10,-48" sprite="ui_game_symbol_temperature" color="[iconColor]" foregroundlayer="true"/>
-                        <label depth="2" name="tempLabel" pos="40,-50" width="250" height="28" text="{playercoretemptitle}: [DECEA3]{playercoretemp}[-]" font_size="26"/>
-
-                        <sprite depth="2" name="windIcon" width="24" height="24" pos="10,-80" sprite="ui_game_symbol_wind" color="[iconColor]" foregroundlayer="true"/>
-                        <label depth="2" name="windLabel" pos="40,-82" width="250" height="28" text="{mapwindtitle}: [DECEA3]{mapwind} MPH[-]" font_size="26"/>
-
-                        <sprite depth="2" name="elevIcon" width="24" height="24" pos="10,-112" sprite="ui_game_symbol_climb" color="[iconColor]" foregroundlayer="true"/>
-                        <label depth="2" name="elevLabel" pos="40,-114" width="250" height="28" text="{mapelevationtitle}: [DECEA3]{mapelevation} M[-]" font_size="26"/>
-
-                    </rect>
-                </panel>
-            </panel>
-        </window>
-
-    </append>
     <!--  Compass -->
     <remove xpath="/windows/window[@name='windowCompass']"/>
 
     <append xpath="/windows">
-        <window name="windowCompass" pos="-190,-25" size="380,43" controller="CompassWindow">
+        <window name="windowCompass" pos="-190,-35" size="380,43" controller="CompassWindow">
             <!--background for custom compass-->
-            <sprite depth="2" name="background" color="0,0,0,180" pos="-37,40" size="455, 80" globalopacitymod="0.5" type="sliced" />
+            <sprite depth="0" name="background" color="0,0,0,180" pos="-37,15" size="455, 50" globalopacitymod="0" type="sliced" />
             <!--marker for custom compass-->
-            <texture name="survivorHUDcompassMarker" depth="9" pos="170,15" size="42,64"
+            <texture name="survivorHUDcompassMarker" depth="5" pos="170,15" size="42,64"
                      texture="@https://raw.githubusercontent.com/lloan/7DTD-fpsHUD/master/Textures/ui_hud_compass_marker.png"
                      color="[darkGrey]"/>
             <!--custom compass texture-->
-            <texture name="compassTexture" depth="8" pos="0,5" size="380,30" texture="@https://raw.githubusercontent.com/lloan/7DTD-fpsHUD/master/Textures/ui_game_compass.png"
-                     color="[iconColor]" tooltip="CHARACTER" rect_size="0.25,1" rect_offset=".8,0"/>
+            <texture name="compassTexture" depth="4" pos="0,5" size="380,30" texture="@https://raw.githubusercontent.com/lloan/7DTD-fpsHUD/master/Textures/ui_game_compass.png" tooltip="Navigation" rect_size="0.25,1" rect_offset=".8,0"/>
+
+            <rect name="playerInfo" size="700,100" depth="99" pos="500,0" controller="CharacterFrameWindow">
+                <sprite depth="2" pos="-40,0" height="20" width="150" type="sliced" foregroundlayer="true" color="red"/>
+                <sprite depth="3" pos="-40,0" height="20" width="150" color="[darkGrey]" foregroundlayer="true" type="sliced"/>
+                <sprite depth="4" pos="-40,0" height="20" width="150" color="{xpcolor}" sprite="menu_empty3px" type="filled" fill="{xp}" globalopacitymod="1.5"
+                        controller="ToolbeltWindow" standard_xp_color="85,125,180,200" updating_xp_color="[green]"
+                        deficit_xp_color="[red]" xp_fill_speed="3.5"/>
+
+                <rect>
+                    <panel name="header" height="15" depth="1" pos="9999,9999" backgroundspritename="ui_game_panel_header">
+                        <label depth="2" name="characterName" pos="42,-6" width="150" height="32" text="" font_size="32"/>
+                        <label depth="2" name="levelNumber" pos="240,-10" width="80" height="28" text="" color="[lightGrey]"/>
+                    </panel>
+
+                    <rect visible="{showcharacter}" pos="9999,9999" >
+                        <panel name="previewFrame" depth="0" pos="0,0" width="10" on_press="true" on_hover="true" disableautobackground="true" snap="false">
+                            <rect>
+                                <texture depth="2" name="playerPreview" material="Materials/Transparent Colored" size="8,8" globalopacity="false"/>
+                            </rect>
+                        </panel>
+                    </rect>
+
+                    <label depth="5" name="TextContent" pos="-35,-1" font_size="18" color="[white]" justify="left" pivot="topleft" text="Level: {playerlevel} - {playerxptonextlevel}" controller="PlayerStatsWindow"/>
+                    <label name="deaths" font_size="18" pos="135,-1" controller="PlayerStatsWindow" color="[white]" depth="5" effect="outline" text="KDZ - {playerpvpkills} | {playerdeaths} | {playerzombiekills}" justify="left"/>
+                </rect>
+
+            </rect>
         </window>
     </append>
 
     <!--  Stats -->
-
     <remove xpath="/windows/window[@name='HUDLeftStatBars']"/>
 
     <append xpath="/windows">
         <window name="HUDLeftStatBars" pos="30,0" size="240,175">
-            <rect name="survivorHUDstatBars" pos="-20,137" size="240,150" rows="2" cols="1" side="right">
+            <rect name="survivorHUDstatBars" pos="-47,137" size="240,150" rows="2" cols="1" side="right">
 
 
-                <rect name="survivorHUDstealthBar" pos="60,70" size="240,55" controller="HUDStatBar" stat_type="Stealth"
+                <rect name="survivorHUDstealthBar" pos="60,20" size="240,55" controller="HUDStatBar" stat_type="Stealth"
                       visible="{statvisible}">
-
-                    <texture name="mainBackground" depth="3" pos="-10,-1" size="155,18"
-                             texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/uiAtlas/survivorHUD_stats_background_v2.png"
-                             type="filled" fill="1" globalopacitymod="1.5" color="[hudElementsBG]" flip="vertically"/>
                     <filledsprite name="barBackground" depth="4" pos="8,-6" size="120,10" atlas="uiAtlas" type="filled"
                                   fill="1" color="[darkGrey]"/>
                     <filledsprite name="BarContent" depth="5" pos="8,-6" size="120,10" atlas="uiAtlas" type="filled"
@@ -163,7 +99,7 @@
                            justify="center" pivot="topleft"/>
                 </rect>
 
-                <rect name="survivorHUDhealthBar" pos="0,32" size="240,55" controller="HUDStatBar" stat_type="Health"
+                <rect name="survivorHUDhealthBar" pos="0,-4" size="240,55" controller="HUDStatBar" stat_type="Health"
                       visible="{statvisible}">
 
                     <sprite name="background" depth="2" pos="66,-10" size="140,24" atlas="uiAtlas" type="sliced"
@@ -180,7 +116,7 @@
                            justify="center" pivot="topleft"/>
                 </rect>
 
-                <rect name="survivorHUDstaminaBar" pos="0,0" size="240,55" controller="HUDStatBar" stat_type="Stamina"
+                <rect name="survivorHUDstaminaBar" pos="0,-32" size="240,55" controller="HUDStatBar" stat_type="Stamina"
                       visible="{statvisible}">
                     <sprite name="background" depth="2" pos="66,-10" size="140,24" atlas="uiAtlas" type="sliced"
                             globalopacitymod="0.6" color="[hudElementsBG]"/>
@@ -196,7 +132,7 @@
                            justify="center" pivot="topleft"/>
                 </rect>
 
-                <rect name="survivorHUDhungerBar" pos="0,-32" size="240,55" controller="HUDStatBar" stat_type="Food"
+                <rect name="survivorHUDhungerBar" pos="0,-60" size="240,55" controller="HUDStatBar" stat_type="Food"
                       visible="{statvisible}">
                     <sprite name="background" depth="3" pos="66,-10" size="140,24" atlas="uiAtlas" type="sliced"
                             color="[darkGrey]" flip="vertically"/>
@@ -212,7 +148,7 @@
                            justify="center" pivot="topleft" controller="PlayerStatsWindow"/>
                 </rect>
 
-                <rect name="survivorHUDthirstBar" pos="0,-65" size="240,55" controller="HUDStatBar" stat_type="Water"
+                <rect name="survivorHUDthirstBar" pos="0,-88" size="240,55" controller="HUDStatBar" stat_type="Water"
                       visible="{statvisible}">
                     <sprite name="background" depth="3" pos="66,-10" size="140,24" atlas="uiAtlas" type="sliced"
                             color="[darkGrey]" flip="vertically"/>
@@ -229,7 +165,7 @@
                 </rect>
             </rect>
 
-            <rect name="hud" pos="90,220" side="left" controller="BuffPopoutList" pivot="BottomLeft">
+            <rect name="hud" pos="80,190" side="left" controller="BuffPopoutList" pivot="BottomLeft">
                 <panel width="168" height="28" name="item" visible="false" pivot="right" disableautobackground="true"
                        pos="70, -10" style="press" sound="[recipe_click]" on_hover="true">
                     <sprite depth="3" pos="-5,0" name="Background" sprite="ui_game_popup" height="30" width="162"
@@ -248,36 +184,17 @@
     <remove xpath="/windows/window[@name='windowToolbelt']"/>
 
     <append xpath="/windows">
-        <window name="windowToolbelt" depth="0" pos="0,75" size="760,226" backgroundcolor="[black]"
+        <window name="windowToolbelt" depth="0" pos="0,70" size="760,215" backgroundcolor="[black]"
                 controller="ToolbeltWindow" visible="{toolbeltvisible}" cursor_area="true">
-            <texture name="survivorHUDlevelxpBG" depth="-5" pos="-380,44" size="835,105"
-                     texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/uiAtlas/survivorHUD_hud_levelxp_background.png"
-                     color="black" effect="outline" globalopacitymod="1.5"/>
-
-            <rect name="fightStats" pos="345, 26" size="100, 26" color="0,0,0,189">
-                <!-- fight stats -->
-                <label name="expToNextLevel" font_size="18" pos="2,10" color="[white]" depth="6" effect="outline" text="{playerxptonextlevel}" justify="left"/>
-
-                <label name="deaths" font_size="18" pos="2,0" controller="PlayerStatsWindow" color="[white]" depth="6" effect="outline" text="Deaths:[-]{playerdeaths}" justify="left"/>
-                <label name="zombiesKilled" font_size="18" pos="2,-24" controller="PlayerStatsWindow" color="[white]" depth="6" effect="outline" text="Zombies:[-]{playerzombiekills}" justify="left"/>
-                <label name="playersKilled" font_size="18" pos="2,-48" controller="PlayerStatsWindow" color="[white]" depth="6" effect="outline" text="Players:[-]{playerpvpkills}" justify="left"/>
-            </rect>
-
-
+            <sprite depth="0" name="background" color="0,0,0,180" pos="-340,40" size="723,95" globalopacitymod="0" type="sliced" />
 
             <rect>
-                <sprite depth="2" pos="-337,29" height="6" width="677" type="sliced" foregroundlayer="true" color="red"/>
-                <sprite depth="3" pos="-337,27" height="5" width="677" color="[darkGrey]" foregroundlayer="true" type="sliced"/>
-                <sprite depth="4" pos="-337,27" height="5" width="677" color="{xpcolor}" sprite="menu_empty3px" type="filled" fill="{xp}" globalopacitymod="1.5"
-                        controller="ToolbeltWindow" standard_xp_color="[xpcolor]" updating_xp_color="[green]"
-                        deficit_xp_color="[red]" xp_fill_speed="2.5"/>
-
-                <grid name="survivorHUDtoolbelt" depth="1" pos="-338,5" rows="1" cols="8" cell_width="85"
-                      cell_height="60" controller="Toolbelt" repeat_content="true">
+                <grid name="survivorHUDtoolbelt" depth="1" pos="-338,25" rows="1" cols="8" cell_width="90"
+                      cell_height="75" controller="Toolbelt" repeat_content="true">
                     <survivorHUD_toolbelt_interface name="0"/>
                 </grid>
 
-                <grid name="survivorHUDtoolbeltNumbers" depth="1" pos="-305,-42" rows="1" cols="8" cell_width="85"
+                <grid name="survivorHUDtoolbeltNumbers" depth="1" pos="-305,-37" rows="1" cols="8" cell_width="90"
                       cell_height="60" repeat_content="false">
                     <label name="survivorHUDtbNumber1" depth="10" size="12,22" text="1" font_size="16" color="white"
                            crispness="Never" effect="outline" effect_distance="1,1" justify="center"/>
@@ -301,64 +218,64 @@
     </append>
 
     <!--  Day & Time Display HUD -->
-
     <append xpath="/windows">
         <window name="survivorHUDdayTimeFrame" depth="1" pos="-60,600" size="100,100" controller="CompassWindow">
-
-            <texture name="compassTexture" pos="-900,0" depth="-1" style="compass.window.compass.texture"
+           <texture name="compassTexture" pos="-900,0" depth="-1" style="compass.window.compass.texture"
                      rect_size="0.25,1" rect_offset=".8,0"
                      color="[transparent]"/> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
-            <sprite pos="130,-653" sprite="" color="255,255,255,255" globalopacitymod="1.8">
-                <texture name="survivorHUDdateIcon" depth="2" pos="-5, 28" size="20,20"
-                         texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/ItemIconAtlas/survivorHUD_hud_date_icon.png"
-                         color="[hudElementsBG]" globalopacitymod="1.5"/>
-                <texture name="survivorHUDtimeIcon" depth="2" pos="50, 28" size="20,20"
-                         texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/ItemIconAtlas/survivorHUD_hud_time_icon.png"
-                         color="[hudElementsBG]" globalopacitymod="1.5"/>
-
-                <label name="survivorHUDday" depth="2" pos="5,-6" width="70" height="30"
-                       text="[{daycolor|always}]{day|always}" font_size="20" crispness="Never" effect="outline"
+            <sprite pos="770,-690" sprite="" color="255,255,255,255" globalopacitymod="1.8">
+                <label name="survivorHUDday" depth="2" pos="3,0" width="70" height="30"
+                       text="Day  [{daycolor|always}]{day|always}" font_size="20" crispness="Never" effect="outline"
                        effect_distance="1,1" upper_case="true" pivot="center" justify="center"/>
-                <label name="survivorHUDtime" depth="2" pos="60,-6" width="70" height="40" text="{time|always}"
+                <label name="survivorHUDtime" depth="2" pos="75,0" width="70" height="40" text="{time|always}"
                        font_size="20" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true"
                        pivot="center" justify="center"/>
+                <label name="survivorHUDelevationValue" depth="2" pos="130,0" width="70" height="40" text="{mapelevation} M"
+                       font_size="20" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true"
+                       pivot="center" justify="center" controller="MapStats"/>
+                <label name="survivorHUDmapTemperature" depth="2" pos="180 ,0" width="70" height="40" text="{maptemperature}"
+                       font_size="20" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true"
+                       pivot="center" justify="center" controller="MapStats"/>
+                <label name="survivorHUDcoreTemperature" depth="2" pos="240 ,0" width="120" height="40" text=" [ {playercoretemp} ]"
+                       font_size="20" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true"
+                       pivot="center" justify="center" controller="MapStats"/>
             </sprite>
         </window>
     </append>
 
-    <!--  Environment -->
+    <!-- Chat and Output -->
+    <remove xpath="/windows/window[@name='chatoutput']"/>
 
     <append xpath="/windows">
-        <window name="survivorHUDenvironment" pos="225,-15" size="120,60">
-            <rect name="survivorHUDenvironmentBG" pos="0,0">
-                <texture name="survivorHUDlevelxpBG" depth="0" pos="-205,10" size="365,80"
-                         texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/uiAtlas/survivorHUD_hud_levelxp_background.png"
-                         color="[hudElementsBG]" globalopacitymod="1.5"/>
-            </rect>
 
-            <rect name="survivorHUDenvironmentIcons" pos="-60,0">
-                <texture name="survivorHUDelevationIcon" depth="2" pos="23,-11" size="20,20"
-                         texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/ItemIconAtlas/survivorHUD_hud_map_elevation_icon.png"
-                         color="[hudElementsBG]" globalopacitymod="1.5"/>
-                <texture name="survivorHUDmapTempIcon" depth="2" pos="80,-11" size="20,20"
-                         texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/ItemIconAtlas/survivorHUD_hud_map_temperature_icon.png"
-                         color="[hudElementsBG]" globalopacitymod="1.5"/>
-                <texture name="survivorHUDcoreTempIcon" depth="2" pos="136,-11" size="25,20"
-                         texture="@https://raw.githubusercontent.com/lloan/7dtd-survivorHUD/master/UIAtlases/ItemIconAtlas/survivorHUD_hud_coretemp_icon.png"
-                         color="[hudElementsBG]" globalopacitymod="1.5"/>
-
-                <label name="survivorHUDelevationValue" depth="3" pos="-30,-34" text="{mapelevation} M" font_size="20"
-                       color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1"
-                       justify="center" controller="MapStats"/>
-                <label name="survivorHUDmapTempValue" depth="3" pos="30,-34" text="{maptemperature}" font_size="20"
-                       color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1"
-                       justify="center" controller="MapStats"/>
-                <label name="survivorHUDcoreTempValue" depth="3" pos="91,-34" text="{playercoretemp}" font_size="20"
-                       color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1"
-                       justify="center" controller="PlayerStatsWindow"/>
-            </rect>
+        <window name="chatoutput" pos="20, -250" depth="100" width="500" height="250" anchor="LeftTop" controller="ChatOutput" fadeout_wait_time="5" fadeout_duration="1">
+            <textlist name="txtOutput" pos="8,-214" width="485" height="210" list_style="chat" pivot="bottomleft" depth="2" font_size="22" crispness="Never" />
         </window>
+
+    </append>
+
+
+    <remove xpath="/windows/window[@name='chat']"/>
+
+    <append xpath="/windows">
+        <window name="chat" pos="20, -250" width="500" height="250" anchor="LeftTop" controller="Chat" cursor_area="true">
+            <rect name="input" depth="2" pos="0,-218" height="32">
+                <combobox name="cbxTarget" type="ComboBoxList`1[EChatType]" value_max="party" pos="2, -6" width="100" height="22" font_size="22" localization_prefix="xuiChatTarget" />
+                <textfield name="txtInput" backgroundcolor="[transparent]" depth="2" pos="110,-16" width="386" height="28" pivot="left" justify="left" overflow="ClampContent" max_line_count="1" crispness="Never" />
+            </rect>
+            <sprite color="[black]" type="sliced" globalopacitymod="0.9" />
+        </window>
+    </append>
+
+    <remove xpath="/windows/window[@name='windowGroupBars']"/>
+
+    <append xpath="/windows">
+    <window name="windowGroupBars" controller="PartyWindow" depth="-20">
+        <grid name="hud" pos="20,-88" rows="7" cols="1" width="168" cell_width="168" cell_height="40" side="left" repeat_content="true" controller="PartyEntryList" >
+            <survivorHUD_party_entry />
+        </grid>
+    </window>
     </append>
 
 </configs>
