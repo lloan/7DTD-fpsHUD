@@ -1,6 +1,9 @@
 # 7DTD-fpsHUD
 A 7DTD Hud modlet that modifies the game HUD - server-side friendly.
 
+In-game screenshot of the modlet in action.
+![Screenshot](https://raw.githubusercontent.com/lloan/7DTD-fpsHUD/master/screenshot.jpg)
+
 ## Features
 
 - Party System that shows the stamina of all members.
