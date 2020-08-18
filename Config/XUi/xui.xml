@@ -19,28 +19,28 @@
     <!--   Level Display & XP Bar -->
 
     <append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
-        <window name="survivorHUDlevelXP" anchor="LeftTop"/>
+        <window name="fpsHUDlevelXP" anchor="LeftTop"/>
     </append>
 
 
     <!--   Day & Time Display HUD -->
 
     <append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
-        <window name="survivorHUDdayTimeFrame" anchor="LeftTop"/>
+        <window name="fpsHUDdayTimeFrame" anchor="LeftTop"/>
     </append>
 
 
     <!--   Time Display UI -->
 
     <append xpath="/xui/ruleset[@name='default']/window_group[@name='map']">
-        <window name="survivorHUDtimeFrame" anchor="LeftTop"/>
+        <window name="fpsHUDtimeFrame" anchor="LeftTop"/>
     </append>
 
 
     <!--   Temperature & Elevation Display -->
 
     <append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
-        <window name="survivorHUDenvironment" anchor="LeftTop"/>
+        <window name="fpsHUDenvironment" anchor="LeftTop"/>
     </append>
 
 </configs>

@@ -29,7 +29,7 @@
     <!--  Defined Icon Colors -->
 
     <append xpath="/styles">
-        <style name="survivorHUD_hud_icon_colors">
+        <style name="fpsHUD_hud_icon_colors">
             <style_entry name="color" value="[white]"/>
             <style_entry name="hovercolor" value="[mediumGrey]"/>
             <style_entry name="selectedcolor" value="[lightGrey]"/>
@@ -40,7 +40,7 @@
     <!--  Toolbelt Layout -->
 
     <append xpath="/styles">
-        <style name="survivorHUD_toolbelt_interface">
+        <style name="fpsHUD_toolbelt_interface">
             <style_entry name="select_color" value="[lightGrey]"/>
             <style_entry name="press_color" value="[white]"/>
             <style_entry name="final_pressed_color" value="[lightGrey]"/>
