@@ -1,7 +1,6 @@
 <configs>
 
     <!-- Global Colors -->
-
     <append xpath="/styles/global">
         <style_entry name="hudElementsBG" value="0,0,0"/>
         <style_entry name="hudElementsLine" value="255,255,255"/>
@@ -16,18 +15,15 @@
         <style_entry name="hudElementsTBSlot" value="96,96,96"/>
         <style_entry name="hudElementsTHRWBar" value="0,180,0,120"/>
 
-        <style_entry name="hudElementsHealth" value="175,30,25"/>
-        <style_entry name="hudElementsStamina" value="17,97,146"/>
-        <style_entry name="hudElementsFuel" value="152,174,0"/>
-
-        <style_entry name="hudElementsStealth" value="255,174,28"/>
-        <style_entry name="hudElementsFood" value="23,81,23"/>
-        <style_entry name="hudElementsWater" value="16,77,96"/>
+        <style_entry name="hudElementsStealth" value="248,218,78"/>
+        <style_entry name="hudElementsHealth" value="176,40,40"/>
+        <style_entry name="hudElementsStamina" value="27,143,247"/>
+        <style_entry name="hudElementsFood" value="64,176,63"/>
+        <style_entry name="hudElementsWater" value="59,191,254"/>
     </append>
 
 
-    <!--  Defined Icon Colors -->
-
+    <!--  Icon Colors -->
     <append xpath="/styles">
         <style name="fpsHUD_hud_icon_colors">
             <style_entry name="color" value="[white]"/>
@@ -49,9 +45,9 @@
             <style_entry name="holding_color" value="[white]"/>
             <style_entry name="width" value="82"/>
             <style_entry name="height" value="82"/>
-            <style_entry name="hover_icon_grow" value="1.5"/>
+            <style_entry name="hover_icon_grow" value="1.2"/>
             <style_entry name="on_press" value="true"/>
-            <style_entry name="sound_volume" value="0.75"/>
+            <style_entry name="sound_volume" value="0.50"/>
             <style_entry name="pickup_sound" value="[pickup_click]"/>
             <style_entry name="place_sound" value="[place_click]"/>
         </style>
