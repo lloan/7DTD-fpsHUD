@@ -224,7 +224,7 @@
                      color="[transparent]"/> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
             <sprite pos="770,-690" sprite="" color="255,255,255,255" globalopacitymod="1.8">
-                <label name="fpsHUDday" depth="2" pos="3,0" width="70" height="30"
+                <label name="fpsHUDday" depth="2" pos="5,0" width="70" height="30"
                        text="Day  [{daycolor|always}]{day|always}" font_size="20" crispness="Never" effect="outline"
                        effect_distance="1,1" upper_case="true" pivot="center" justify="center"/>
                 <label name="fpsHUDtime" depth="2" pos="75,0" width="70" height="40" text="{time|always}"
