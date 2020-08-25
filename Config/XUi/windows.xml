@@ -99,7 +99,7 @@
     <remove xpath="/windows/window[@name='HUDLeftStatBars']"/>
 
     <append xpath="/windows">
-        <window name="HUDLeftStatBars" pos="30,0" size="240,175">
+        <window name="HUDLeftStatBars" pos="30,-5" size="240,175">
             <rect name="fpsHUDstatBars" pos="-47,137" size="240,150" rows="2" cols="1" side="right">
 
                 <sprite depth="0" name="background" color="0,0,0,180" pos="38,4" size="185,125" globalopacitymod="0" type="sliced" />
@@ -199,7 +199,6 @@
     </append>
 
     <!--  Toolbelt -->
-
     <remove xpath="/windows/window[@name='windowToolbelt']"/>
 
     <append xpath="/windows">
@@ -246,7 +245,6 @@
         </window>
 
     </append>
-
 
     <remove xpath="/windows/window[@name='chat']"/>
 
