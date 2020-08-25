@@ -20,3 +20,20 @@ Breakdown of features
 
 ## Install
 Download this repository (Master Branch) and move into your Mods folder. That's it. 
+
+## Changelog
+
+1.1.0 - 8.25.20
+- Center text for popup information with toolbelt
+- Toolbelt icons made slightly smaller, they were too large.
+- Center environmental information under compass
+- Make sure party component works with 8 party members.
+- Modify colors for stats HUDBar
+- Make stealth bar larger - easier to see.
+- Add dark background for player information bars (health,stamina,food,water)
+- Modify size of toolbelt durability bar
+- Modify positioning and size of toolbelt numbers
+- Minimized code where possible
+- Party component moved up to top left corner.
+- Chat component made slightly more compact.
+- screen shot image updated
