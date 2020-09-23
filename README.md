@@ -23,6 +23,10 @@ Download this repository (Master Branch) and move into your Mods folder. That's 
 
 ## Changelog
 
+1.2.0 - 9.23.20
+- Fix issue with lag caused after opening containers
+- Updated position of xp bar as it overlapped when opening map.
+
 1.1.0 - 8.25.20
 - Center text for popup information with toolbelt
 - Toolbelt icons made slightly smaller, they were too large.
